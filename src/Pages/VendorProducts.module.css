@@ -1,0 +1,19 @@
+.productsGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* یک ستون در هر ردیف */
+  gap: 15px; /* فاصله بین محصولات */
+}
+
+.productCard {
+  width: 100%; /* عرض کارت برابر با عرض ستون */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.productCard:hover {
+  transform: scale(1.05); /* بزرگ‌نمایی کوچک هنگام هاور */
+}
