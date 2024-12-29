@@ -122,6 +122,7 @@ const SubCategoryPage = () => {
             name="min_price"
             value={filters.min_price}
             onChange={handleFilterChange}
+            placeholder="کمترین قیمت مدنظر خود را وارد کنید"
           />
         </div>
         <div
@@ -136,6 +137,7 @@ const SubCategoryPage = () => {
             name="max_price"
             value={filters.max_price}
             onChange={handleFilterChange}
+            placeholder="بیشترین قیمت مدنظر خود را وارد کنید"
           />
         </div>
         <div

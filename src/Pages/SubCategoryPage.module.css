@@ -73,12 +73,16 @@
 /* زمانی که گزینه‌ای انتخاب نشده */
 .select option[value=""] {
   color: #999; /* خاکستری برای متن پیش‌فرض */
+  font-family: Vazir;
+  src: url(../Fonts/Vazir.ttf);
 }
 
 /* انتخابگر غیرفعال */
 .selectInactive {
   color: #386641; /* سبز */
   border: 2px solid #386641; /* سبز */
+  font-family: Vazir;
+  src: url(../Fonts/Vazir.ttf);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 20 20'%3E%3Cpath fill='%23386641' d='M10 15l-5-5h10z'/%3E%3C/svg%3E");
 }
 
@@ -103,15 +107,6 @@
   color: #386641;
 }
 
-/* .filterGroup input[type="number"],
-.filterGroup select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #f0b653;
-  border-radius: 5px;
-  font-size: 14px;
-  margin-top: 5px;
-} */
 /* استایل پیش‌فرض ورودی‌های عددی */
 .filterGroup input[type="number"] {
   width: 100%;
@@ -122,12 +117,14 @@
   margin-top: 5px;
   color: #386641; /* متن سبز در حالت عادی */
   transition: border-color 0.3s ease, color 0.3s ease;
+  font-family: Vazir;
+  src: url(../Fonts/Vazir.ttf);
 }
 
 /* وقتی عدد داخل باکس وارد شده است */
 .filterGroup input[type="number"]:focus,
 .filterGroup input[type="number"]:valid {
-  border-color: #f0b653; /* نارنجی وقتی مقدار دارد */
+  border-color: #386641; /* نارنجی وقتی مقدار دارد */
   color: #f0b653; /* متن نارنجی وقتی مقدار دارد */
   outline: none; /* حذف استایل پیش‌فرض مرورگر */
 }
