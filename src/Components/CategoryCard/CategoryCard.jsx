@@ -6,7 +6,6 @@ function CategoryCard({ category }) {
   const link = category.subcollection_ids.length
     ? `/category/${category.id}`
     : `/subcategory/${category.id}`;
- 
 
   return (
     <Link to={link}>

@@ -15,7 +15,12 @@ function CustomSlider({ productId }) {
       setIsLoading(true); // فعال کردن بارگذاری
       try {
         const response = await axios.get(
-          `https://yeket.liara.run/api/store/products/${productId}`
+          `https://yeket.liara.run/api/store/products/${productId}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
         );
         setImages(response.data.images);
         setCurrentIndex(0); // بازنشانی به اولین تصویر
@@ -52,7 +57,13 @@ function CustomSlider({ productId }) {
   if (isLoading) {
     return (
       <div className={styles.loading}>
-        <FadeLoader color="#a7c957" height={15} width={5} radius={2} margin={2} />
+        <FadeLoader
+          color="#a7c957"
+          height={15}
+          width={5}
+          radius={2}
+          margin={2}
+        />
       </div>
     );
   }

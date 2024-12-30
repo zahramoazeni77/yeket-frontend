@@ -36,7 +36,12 @@ function CardDetail() {
 
   const getData = async () => {
     const response = await axios.get(
-      `https://yeket.liara.run/api/store/products/${id}`
+      `https://yeket.liara.run/api/store/products/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
 
     setProduct(response.data);
@@ -44,7 +49,12 @@ function CardDetail() {
     setImages(response.data.images);
 
     const similarRespons = await axios.get(
-      "https://yeket.liara.run/api/store/products/"
+      "https://yeket.liara.run/api/store/products/",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     setSimilarproducts(similarRespons.data);
   };
@@ -205,9 +215,9 @@ function CardDetail() {
             ))}
           </p> */}
           <Link to={`/vendor/${product.vendor}`}>
-          <p>
-            فروشنده: <span>{product.vendor}</span>
-          </p>
+            <p>
+              فروشنده: <span>{product.vendor}</span>
+            </p>
           </Link>
           <p>
             وضعیت: <span>{product.stock > 0 ? "موجود" : "ناموجود"} </span>
@@ -244,7 +254,7 @@ function CardDetail() {
         <h3>نظرات مشتریان</h3>
       </div>
       <div>
-        <CommentsBox/>
+        <CommentsBox />
       </div>
     </div>
   );

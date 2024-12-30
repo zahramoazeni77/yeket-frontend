@@ -14,11 +14,21 @@ function MoreNewest() {
 
   const getData = async () => {
     const categoryResponse = await axios.get(
-      "https://yeket.liara.run/api/store/collections/"
+      "https://yeket.liara.run/api/store/collections/",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     setCategorys(categoryResponse.data);
     const response = await axios.get(
-      "https://yeket.liara.run/api/store/products/"
+      "https://yeket.liara.run/api/store/products/",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     setProducts(response.data);
   };

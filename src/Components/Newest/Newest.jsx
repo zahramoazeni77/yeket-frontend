@@ -16,7 +16,12 @@ function Newest() {
 
   const getData = async () => {
     const response = await axios.get(
-      "https://yeket.liara.run/api/store/products/"
+      "https://yeket.liara.run/api/store/products/",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     setProducts(response.data);
   };
@@ -63,10 +68,9 @@ function Newest() {
       </Link>
       <div className={styles.container}>
         <Slider {...settings}>
-        {products.map((product) => (
+          {products.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}
-          
         </Slider>
       </div>
     </div>

@@ -19,7 +19,12 @@ function CategoryModal({ category, setCategory }) {
     try {
       setLoading(true); // فعال کردن حالت بارگذاری
       const response = await axios.get(
-        "https://yeket.liara.run/api/store/collections/"
+        "https://yeket.liara.run/api/store/collections/",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       setCategorys(response.data);
     } catch (error) {

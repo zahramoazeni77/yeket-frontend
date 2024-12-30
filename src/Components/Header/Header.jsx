@@ -26,7 +26,12 @@ function Header() {
     const fetchAllProducts = async () => {
       try {
         const response = await axios.get(
-          "https://yeket.liara.run/api/store/products/"
+          "https://yeket.liara.run/api/store/products/",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
         );
         setAllProducts(response.data); // ذخیره تمامی محصولات
       } catch (error) {
@@ -49,8 +54,8 @@ function Header() {
       setLoadingSearch(true);
       setShowResults(true);
 
-      const filteredResults = allProducts.filter((product) =>
-        product.title.toLowerCase().includes(term.toLowerCase()) // جستجو بر اساس عنوان محصول
+      const filteredResults = allProducts.filter(
+        (product) => product.title.toLowerCase().includes(term.toLowerCase()) // جستجو بر اساس عنوان محصول
       );
       setTimeout(() => {
         setSearchResults(filteredResults);

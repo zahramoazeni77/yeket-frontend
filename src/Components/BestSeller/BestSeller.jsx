@@ -16,7 +16,12 @@ function BestSeller() {
 
   const getData = async () => {
     const response = await axios.get(
-      "https://yeket.liara.run/api/store/products/"
+      "https://yeket.liara.run/api/store/products/",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     setProducts(response.data);
   };

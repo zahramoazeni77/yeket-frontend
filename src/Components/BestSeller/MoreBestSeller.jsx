@@ -3,7 +3,7 @@ import ProductCard from "../Card/ProductCard";
 import styles from "./MoreBestSeller.module.css";
 import { GrFormNext } from "react-icons/gr";
 import axios from "axios";
-import "../../Fonts/B-NAZANIN.ttf"
+import "../../Fonts/B-NAZANIN.ttf";
 import { FaSortAmountDown } from "react-icons/fa";
 
 function MoreBestSeller() {
@@ -15,11 +15,21 @@ function MoreBestSeller() {
 
   const getData = async () => {
     const categoryResponse = await axios.get(
-      "https://yeket.liara.run/api/store/collections/"
+      "https://yeket.liara.run/api/store/collections/",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     setCategorys(categoryResponse.data);
     const response = await axios.get(
-      "https://yeket.liara.run/api/store/products/"
+      "https://yeket.liara.run/api/store/products/",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
     setProducts(response.data);
   };
@@ -31,22 +41,24 @@ function MoreBestSeller() {
         <div className={styles.morecontainer}>
           {products.map((product) => (
             <div className={styles.product} key={product.id}>
-              <ProductCard product={product}/>
+              <ProductCard product={product} />
             </div>
           ))}
         </div>
         <div className={styles.sidebar}>
           <h4>همه</h4>
-          {categorys.map((item) => (
-            item.parent== null &&
-            <p key={item.id}>{item.title}</p>
-          ))}
+          {categorys.map(
+            (item) => item.parent == null && <p key={item.id}>{item.title}</p>
+          )}
           <div className={styles.sortcontainer}>
-          <h3>مرتب کردن بر اساس&nbsp;<FaSortAmountDown /></h3>
-          <p>ارزان ترین</p>
-          <p>گران ترین</p>
-          <p>مورد علاقه ها</p>
-          <p>پیشنهاد حامی</p>
+            <h3>
+              مرتب کردن بر اساس&nbsp;
+              <FaSortAmountDown />
+            </h3>
+            <p>ارزان ترین</p>
+            <p>گران ترین</p>
+            <p>مورد علاقه ها</p>
+            <p>پیشنهاد حامی</p>
           </div>
         </div>
       </div>
