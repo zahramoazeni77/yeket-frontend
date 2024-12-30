@@ -15,12 +15,7 @@ function CustomSlider({ productId }) {
       setIsLoading(true); // فعال کردن بارگذاری
       try {
         const response = await axios.get(
-          `https://yeket.liara.run/api/store/products/${productId}`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
+          `https://yeket.liara.run/api/store/products/${productId}`
         );
         setImages(response.data.images);
         setCurrentIndex(0); // بازنشانی به اولین تصویر

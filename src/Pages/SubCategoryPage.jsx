@@ -21,12 +21,7 @@ const SubCategoryPage = () => {
   const fetchAttributes = async () => {
     try {
       const response = await axios.get(
-        `https://yeket.liara.run/api/store/collections/${collectionId}/attributes/`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        `https://yeket.liara.run/api/store/collections/${collectionId}/attributes/`
       );
       setAttributes(response.data);
     } catch {

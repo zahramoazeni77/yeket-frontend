@@ -49,12 +49,7 @@ function CardDetail() {
     setImages(response.data.images);
 
     const similarRespons = await axios.get(
-      "https://yeket.liara.run/api/store/products/",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      "https://yeket.liara.run/api/store/products/"
     );
     setSimilarproducts(similarRespons.data);
   };

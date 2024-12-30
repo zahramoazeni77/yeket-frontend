@@ -22,21 +22,11 @@ function CategoryPage() {
 
   const getData = async () => {
     const response = await axios.get(
-      "https://yeket.liara.run/api/store/products/",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      "https://yeket.liara.run/api/store/products/"
       // `https://yeket.liara.run/api/store/collections/${id}/products`
     );
     const categoriesResponse = await axios.get(
-      "https://yeket.liara.run/api/store/collections/",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      "https://yeket.liara.run/api/store/collections/"
     );
     setProducts(response.data);
     setCategories(categoriesResponse.data);

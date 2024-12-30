@@ -26,12 +26,7 @@ function Header() {
     const fetchAllProducts = async () => {
       try {
         const response = await axios.get(
-          "https://yeket.liara.run/api/store/products/",
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
+          "https://yeket.liara.run/api/store/products/"
         );
         setAllProducts(response.data); // ذخیره تمامی محصولات
       } catch (error) {

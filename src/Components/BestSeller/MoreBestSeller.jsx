@@ -15,21 +15,11 @@ function MoreBestSeller() {
 
   const getData = async () => {
     const categoryResponse = await axios.get(
-      "https://yeket.liara.run/api/store/collections/",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      "https://yeket.liara.run/api/store/collections/"
     );
     setCategorys(categoryResponse.data);
     const response = await axios.get(
-      "https://yeket.liara.run/api/store/products/",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      "https://yeket.liara.run/api/store/products/"
     );
     setProducts(response.data);
   };

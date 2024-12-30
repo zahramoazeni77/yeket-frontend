@@ -15,12 +15,7 @@ function Category() {
 
   const getData = async () => {
     const response = await axios.get(
-      "https://yeket.liara.run/api/store/collections/",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      "https://yeket.liara.run/api/store/collections/"
     );
     setCategory(response.data);
   };
