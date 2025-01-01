@@ -83,16 +83,16 @@
   cursor: pointer;
   vertical-align: middle;
 }
-.similarproducts{
+.similarproducts {
   width: 100%;
 }
 .product {
   padding: 0 50px;
 }
-.slick-prev{
+.slick-prev {
   color: #386641;
 }
-.title{
+.title {
   display: block;
   margin-top: 160px;
   text-align: right;
@@ -127,7 +127,6 @@
   line-height: 1.6; /* فاصله خطوط */
   color: #555; /* رنگ متن */
 }
-
 
 /* Media Queries برای دستگاه‌های کوچک‌تر */
 @media (max-width: 1024px) {
@@ -176,9 +175,6 @@
     line-height: 1.3; /* کاهش فاصله خطوط */
   }
 }
-
-
-
 
 /* Responsive */
 @media (max-width: 1300px) {
@@ -422,30 +418,51 @@
   }
   .actions {
     width: 100%;
-    display: inline;
+    display: flex; /* استفاده از flexbox برای چیدمان */
+    flex-direction: column; /* چیدمان عمودی عناصر */
+    align-items: center; /* مرکز کردن عناصر به صورت افقی */
+    justify-content: center; /* مرکز کردن عناصر به صورت عمودی */
   }
+
   .pricebtn {
     font-size: 0.7rem;
     padding: 5px 10px;
-    float: left;
-    width: 40%;
+    width: 50%; /* عرض دکمه برای متناسب شدن */
+    margin-bottom: 10px; /* فاصله از دکمه پایین */
+    background-color: #f0b653;
+    color: #363636;
+    border: none;
+    border-radius: 10px;
+    text-align: center; /* متن داخل دکمه وسط‌چین شود */
+    cursor: pointer;
   }
+
   .buy {
-    width: 50%;
-    float: right;
+    display: flex; /* چیدمان افقی برای دکمه و آیکن */
+    align-items: center; /* مرکز کردن آیتم‌ها به صورت عمودی */
+    justify-content: center; /* مرکز کردن آیتم‌ها */
+    width: 100%; /* عرض کامل */
+    margin-left: 15%;
   }
+
   .buybtn {
     font-size: 0.7rem;
-    padding: 5px 8px;
-    float: inline-start;
-    vertical-align: middle;
+    padding: 5px 15px; /* فاصله داخلی دکمه */
+    background-color: #a7c957;
+    color: #272727;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px; /* فاصله از آیکن */
+    cursor: pointer;
+    text-align: center; /* متن وسط‌چین شود */
   }
 
   .icon {
-    display: inline;
-    justify-self: center;
-    float: inline-start;
+    font-size: 1.2rem; /* اندازه مناسب آیکن */
+    color: #f0b653;
+    cursor: pointer;
   }
+
   .details p {
     font-size: 0.6rem;
   }

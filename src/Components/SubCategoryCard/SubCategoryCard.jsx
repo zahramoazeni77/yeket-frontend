@@ -6,7 +6,7 @@ const SubCategoryCard = ({ subCategory }) => {
   const link = subCategory.subcollection_ids.length
     ? `/category/${subCategory.id}`
     : `/subcategory/${subCategory.id}`;
-  console.log(subCategory.title);
+  // console.log(subCategory.title);
 
   return (
     <Link to={link}>

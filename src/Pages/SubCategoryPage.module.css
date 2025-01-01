@@ -110,7 +110,7 @@
 /* استایل پیش‌فرض ورودی‌های عددی */
 .filterGroup input[type="number"] {
   width: 100%;
-  padding: 10px;
+  padding: 10px 0px;
   border: 2px solid #386641; /* سبز در حالت عادی */
   border-radius: 5px;
   font-size: 14px;
@@ -180,65 +180,47 @@
   gap: 20px;
 }
 
-.error {
-  color: red;
-  font-weight: bold;
-}
-
 /* واکنش‌گرایی */
 @media (max-width: 1024px) {
   .container {
-    flex-direction: row-reverse; /* سایدبار کنار محصولات باقی می‌ماند */
+    flex-direction: column-reverse; /* قرار گرفتن فیلترها بالای محصولات */
   }
 
   .sidebar {
-    width: 250px; /* کاهش عرض سایدبار برای نمایش بهتر */
+    width: 100%; /* عرض کامل سایدبار */
+    margin-bottom: 20px; /* فاصله پایین */
+  }
+
+  .filterContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .productsGrid {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(150px, 1fr)
-    ); /* کاهش اندازه کارت‌ها */
+    grid-template-columns: repeat(3, 1fr); /* سه ستون برای محصولات */
   }
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    width: 200px; /* کاهش عرض بیشتر در نمایشگر کوچک */
-  }
-
   .productsGrid {
     grid-template-columns: repeat(
-      auto-fill,
-      minmax(120px, 1fr)
-    ); /* کارت‌ها کوچک‌تر */
-    gap: 15px;
-  }
-
-  .sidebar h3 {
-    font-size: 18px;
-  }
-
-  .filterGroup label {
-    font-size: 14px;
+      2,
+      1fr
+    ); /* دو ستون برای محصولات در صفحه‌های کوچک‌تر */
   }
 }
 
 @media (max-width: 480px) {
-  .sidebar {
-    width: 180px; /* حداقل عرض سایدبار */
-    padding: 10px;
-  }
-
-  .filterGroup input[type="number"],
-  .filterGroup select {
-    font-size: 12px;
-    padding: 8px;
-  }
-
   .productsGrid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr); /* یک ستون در موبایل */
+  }
+
+  .filterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }

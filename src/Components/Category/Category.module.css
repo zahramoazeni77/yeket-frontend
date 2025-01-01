@@ -12,7 +12,7 @@
   vertical-align: middle;
 }
 .container {
-  margin-bottom: 15vh;
+  margin-bottom: 10px;
 }
 
 /* Responsive */
@@ -24,8 +24,5 @@
 @media (max-width: 400px) {
   .title {
     font-size: 0.8rem;
-  }
-  .container {
-    margin-bottom: 50px;
   }
 }

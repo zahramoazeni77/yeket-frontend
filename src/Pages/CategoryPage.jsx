@@ -16,9 +16,10 @@ function CategoryPage() {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState({});
   useEffect(() => {
     getData();
-  }, []);
+  }, [currentCategory]);
 
   const getData = async () => {
     const response = await axios.get(
@@ -28,8 +29,13 @@ function CategoryPage() {
     const categoriesResponse = await axios.get(
       "https://yeket.liara.run/api/store/collections/"
     );
+
+    const currentCategoryResponse = await axios.get(
+      `https://yeket.liara.run/api/store/collections/${id}`
+    );
     setProducts(response.data);
     setCategories(categoriesResponse.data);
+    setCurrentCategory(currentCategoryResponse.data);
   };
   var settings = {
     dots: true,
@@ -66,7 +72,7 @@ function CategoryPage() {
   };
   return (
     <div className={styles.body}>
-      <h1 className={styles.categoryName}>مد و پوشاک</h1>
+      <h1 className={styles.categoryName}>{currentCategory.title}</h1>
       <Link to="/bestsellers">
         <h2 className={styles.title}>
           <GrFormNext className={styles.morebtn} size="30px" />

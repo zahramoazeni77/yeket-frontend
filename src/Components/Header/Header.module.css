@@ -81,24 +81,22 @@
 
 /* آیکن‌ها */
 .iconsWrapper {
-  display: flex;
-  gap: 20px; /* فاصله بین آیکن‌ها */
+  /* display: flex; */
+  /* float: left; */
+
+  gap: 10px; /* فاصله بین آیکن‌ها */
   font-size: 20px; /* اندازه بزرگ‌تر برای آیکن‌ها */
-  margin-left: 40px;
-  justify-content: flex-start; /* آیکن‌ها در سمت چپ بمانند */
+  margin-left: 10px;
+  /* justify-content:left;  */
+  flex-shrink: 0; /* جلوگیری از جابه‌جایی آیکن‌ها */
 }
 
-/* جلوگیری از جابه‌جایی آیکن‌ها در حالت ریسپانسیو */
-.iconsWrapper {
-  flex-shrink: 0;
-}
-
-/* آیکن‌ها */
 .icon {
   width: 28px; /* عرض بزرگ‌تر */
   height: 28px; /* ارتفاع بزرگ‌تر */
   color: #f0b653;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 /* تنظیم ورودی جستجو */
@@ -196,52 +194,53 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+  .container2 {
+    /* flex-wrap: wrap; انتقال عناصر به خط بعدی */
+    justify-content: space-between; /* چینش صحیح بخش‌ها */
+  }
+
   .searchWrapper {
-    width: 60%; /* عرض کمتر */
-    margin-bottom: 10px;
+    width: 60%; /* عرض کمتر برای بخش جستجو */
+    order: 1; /* بخش جستجو در خط اول */
   }
 
   .iconsWrapper {
-    font-size: 18px; /* آیکن‌ها کوچک‌تر */
-    gap: 15px;
+    flex-direction: row; /* آیکن‌ها در کنار جستجو قرار بگیرند */
+    justify-content: flex-start;
+    order: 1;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .searchWrapper {
-    width: 70%;
+    width: 100%; /* عرض کامل */
+    margin-right: 20%;
   }
 
-  .btn {
-    font-size: 1rem; /* متن کوچک‌تر */
+  .iconsWrapper {
+    align-self: self-start;
   }
 
   .icon {
     width: 24px;
     height: 24px;
   }
-
-  .header {
-    font-size: 1.5rem; /* متن کوچک‌تر */
+  .categoryButton {
+    font-size: 1rem;
   }
-}
-
-@media (max-width: 400px) {
-  .searchWrapper {
-    width: 100%;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-
   .btn {
     font-size: 0.9rem; /* متن کوچک‌تر */
+    vertical-align: middle;
+    margin-top: 8px;
   }
 
   .header {
     font-size: 1.3rem;
+    vertical-align: middle;
+    margin-top: 5px;
+  }
+  .logo {
+    padding-top: 0;
   }
 }
